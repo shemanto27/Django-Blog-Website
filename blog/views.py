@@ -6,6 +6,7 @@ def home_page(request):
     posts = Post.objects.all().order_by("-created_on")
     context = {
         'posts' : posts,
+        'title' : "Shemanto's Blog"
     }
     return render(request, 'home.html', context)
 
@@ -15,5 +16,6 @@ def blog_details(request, pk):
     context = {
         'post' : post,
         'comments' : comments,
+        'title' : post.title,
     }
     return render(request,'blog_details.html', context)

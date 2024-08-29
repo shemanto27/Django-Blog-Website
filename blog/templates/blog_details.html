@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="container mx-auto">
+    <h3 class="text-5xl font-bold">{{ post.title }}</h1>
+    <p class="mt-10 text-xl">{{ post.content }}</p>
+</div>
 
+{% for comment in comments %}
+<div class="container mx-auto mt-12">
+    <p class="text-base font-bold">{{ comment.author }} commented on {{ comment.created_on }}:</p>
+    <p>{{ comment.comment_body }}</p>
+</div>
+{% endfor %}
 {% endblock %}
