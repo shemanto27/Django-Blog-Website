@@ -4,5 +4,6 @@ from blog.views import *
 
 urlpatterns = [
     path('', home_page, name='Home Page'),
-    path('post/<int:pk>/', blog_details, name='Full Blog')
+    path('post/<int:pk>/', blog_details, name='Full Blog'),
+    path('blogs/', all_blogs, name='All Blogs'),
 ]

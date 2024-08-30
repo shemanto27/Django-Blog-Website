@@ -22,25 +22,6 @@
 }
 </style>
 
-<!-- TailWind Config Setup -->
-<script>
-tailwind.config = {
-theme: {
-    extend: {
-    colors: {
-        clifford: '#da373d',
-        'color-violet' : '#6941C6',
-        'color-sky' : '#026AA2',
-        'color-pink' : '#C11574',
-        'color-green' : '#027A48',
-        'color-black' : '#1A1A1A',
-        'color-ash' : '#667085',
-        ''
-    }
-    }
-}
-}
-</script>
 
 
 </head>
@@ -66,7 +47,7 @@ theme: {
                 <ul
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow color-black">
-                <li><a>Blog</a></li>
+                <li><a href="{% url 'All Blogs' %}">Blog</a></li>
                 <li>
                     <a>Projects</a>
                     <ul class="p-2">
@@ -81,7 +62,7 @@ theme: {
             </div>
             <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 color-black">
-                <li><a>Blog</a></li>
+                <li><a href="{% url 'All Blogs' %}">Blog</a></li>
                 <li>
                 <details>
                     <summary>Project</summary>
