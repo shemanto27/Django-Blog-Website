@@ -4,12 +4,48 @@
     <meta charset="UTF-8>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- -------------------Font Awesome CDN---------------- -->
+<script src="https://kit.fontawesome.com/a78b8a66d3.js" crossorigin="anonymous"></script>
+
+<!-- DaisyUI CDN -->
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
 <script src="https://cdn.tailwindcss.com"></script>
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<style>
+.font-inter{
+    font-family: "Inter", sans-serif;
+}
+</style>
+
+<!-- TailWind Config Setup -->
+<script>
+tailwind.config = {
+theme: {
+    extend: {
+    colors: {
+        clifford: '#da373d',
+        'color-violet' : '#6941C6',
+        'color-sky' : '#026AA2',
+        'color-pink' : '#C11574',
+        'color-green' : '#027A48',
+        'color-black' : '#1A1A1A',
+        'color-ash' : '#667085',
+        ''
+    }
+    }
+}
+}
+</script>
+
+
 </head>
-<body>
-    <nav>
+<body class="font-inter container mx-auto">
+    <nav class="mb-10">
         <div class="navbar bg-base-100">
             <div class="navbar-start">
             <div class="dropdown">
@@ -29,33 +65,33 @@
                 </div>
                 <ul
                 tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                <li><a>Item 1</a></li>
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow color-black">
+                <li><a>Blog</a></li>
                 <li>
-                    <a>Parent</a>
+                    <a>Projects</a>
                     <ul class="p-2">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
+                    <li><a>Django</a></li>
+                    <li><a>React.JS</a></li>
                     </ul>
                 </li>
-                <li><a>Item 3</a></li>
+                <li><a>Resume</a></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost text-xl">Shemanto's Blog</a>
+            <a class="btn btn-ghost text-xl color-black" href="{% url 'Home Page' %}">Shemanto's Blog</a>
             </div>
             <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-                <li><a>Item 1</a></li>
+            <ul class="menu menu-horizontal px-1 color-black">
+                <li><a>Blog</a></li>
                 <li>
                 <details>
-                    <summary>Parent</summary>
+                    <summary>Project</summary>
                     <ul class="p-2">
-                    <li><a>Submenu 1</a></li>
-                    <li><a>Submenu 2</a></li>
+                    <li><a>Django</a></li>
+                    <li><a>React.JS</a></li>
                     </ul>
                 </details>
                 </li>
-                <li><a>Item 3</a></li>
+                <li><a>Resume</a></li>
             </ul>
             </div>
             <div class="navbar-end">

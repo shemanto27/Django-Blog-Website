@@ -1,23 +1,64 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<!-- Post -->
+<!-- Big Title -->
+<hr>
+<h1 class="text-center text-[200px] text-[#1A1A1A] font-extrabold w-[1220px] h-[295px]">WEB + AI</h1>
+<hr class="mb-10">
 
-{% for post in posts %}
-    <div class="card bg-base-100 w-96 shadow-xl container mx-auto flex m-5">
-        <div class="card-body">
-        <h2 class="card-title">{{ post.title }}</h2>
-        <p>{{ post.content | slice:"100" }}</p>
-        <div class="card-actions justify-end">
-        <p>{{ post.created_on }} | Categories:
-            {% for category in post.categories.all %}
-                {{ category.blog_category }}
-            {% endfor %}
-        </p>
-        <a href="{% url 'Full Blog' post.pk %}"><button class="btn btn-primary">Read Full Blog</button></a>
+<!-- Recent Blog -->
+<section>
+    <h3 class="text-[#1A1A1A] text-lg font-bold mb-5">Recent blog posts</h3>
+    <div id="recent-section-container" class="grid grid-cols-2 gap-5">
+        <!-- post-1 -->
+        <div class="row-span-2">
+                <p class="text-[#6941C6] text-sm my-1">{{ recent_posts.0.updated_on }}</p>
+                <a href="{% url 'Full Blog' recent_posts.0.pk %}">
+                    <h2 class="text-[#1A1A1A] font-bold text-lg my-1">{{ recent_posts.0.title }}</h2>
+                <p class="text-xl text-[#667085]">{{ recent_posts.0.content | slice:"100" }}</p>
+                </a>
+            {% for category in recent_posts.0.categories.all %}
+                <span class="btn rounded-full bg-[#EEF4FF] text-[#3538CD]">{{ category.blog_category }}</span>
+            {% endfor %}            
         </div>
+
+        <!-- post-2 -->
+        <div>
+            <p class="text-[#6941C6] text-sm my-1">{{ recent_posts.1.updated_on }}</p>
+            <a href="{% url 'Full Blog' recent_posts.1.pk %}">
+                <h2 class="text-[#1A1A1A] font-bold text-lg my-1">{{ recent_posts.1.title }}</h2>
+                <p class="text-xl text-[#667085]">{{ recent_posts.1.content | slice:"100" }}</p>
+            </a>
+            {% for category in recent_posts.1.categories.all %}
+                <span class="btn rounded-full bg-[#EEF4FF] text-[#3538CD]">{{ category.blog_category }}</span>
+            {% endfor %}  
+        </div>
+
+        <!-- post-3 -->
+        <div>
+            <p class="text-[#6941C6] text-sm my-1">{{ recent_posts.2.updated_on }}</p>
+            <a href="{% url 'Full Blog' recent_posts.2.pk %}">
+                <h2 class="text-[#1A1A1A] font-bold text-lg my-1">{{ recent_posts.2.title }}</h2>
+                <p class="text-xl text-[#667085]">{{ recent_posts.2.content | slice:"100" }}</p>
+            </a>
+            {% for category in recent_posts.2.categories.all %}
+                <span class="btn rounded-full bg-[#EEF4FF] text-[#3538CD]">{{ category.blog_category }}</span>
+            {% endfor %}  
+        </div>
+
+        <!-- post-4 -->
+        <div class="col-span-2">
+            <p class="text-[#6941C6] text-sm my-1">{{ recent_posts.3.updated_on }}</p>
+            <a href="{% url 'Full Blog' recent_posts.3.pk %}">
+                <h2 class="text-[#1A1A1A] font-bold text-lg my-1">{{ recent_posts.3.title }}</h2>
+                <p class="text-xl text-[#667085]">{{ recent_posts.3.content | slice:"100" }}</p>
+            </a>
+            {% for category in recent_posts.3.categories.all %}
+                <span class="btn rounded-full bg-[#EEF4FF] text-[#3538CD]">{{ category.blog_category }}</span>
+            {% endfor %}  
         </div>
     </div>
-{% endfor %}
+</section>
+
 
 {% endblock %}
